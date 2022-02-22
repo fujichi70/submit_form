@@ -1,7 +1,6 @@
 <?php
 
 header('X-FRAME-OPTIONS:DENY');
-// iframeが入れられないようにする→クリックジャッキング対策
 
 ?>
 
