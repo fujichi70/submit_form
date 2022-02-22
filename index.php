@@ -18,24 +18,25 @@ header('X-FRAME-OPTIONS:DENY');
 
 <body>
 	<h1>メール送信画面</h1>
-	<form action="○○.php" method="post">
-		<!-- value内でXSS対策のためエスケープ処理 -->
-		<label for="name">氏名</label><br>
-		<input type="text" id="name" name="name" placeholder="山田太郎" value="<?php if (!empty($_POST['name'])) {
-																				echo htmlspecialchars($_POST['name']);
-																			} ?>" /><br>
-		<br>
-		<label for="email">メールアドレス</label><br>
-		<input type="text" id="email" name="email" placeholder="test@test.com" value="<?php if (!empty($_POST['email'])) {
-																							htmlspecialchars($_POST['email']);
-																						} ?>" /><br>
-		<br>
-		<label for="contents">内容</label><br>
-		<textarea name="contents" id="contents" cols="30" rows="10"><?php if (!empty($_POST['contents'])) {
-																		echo htmlspecialchars($_POST['contents']);
-																	} ?></textarea><br>
-		<br>
-		<input type="submit" value="送信する" />
+	<form action="complete.php" method="post">
+		<table>
+			<tr>
+				<td>タイトル</td>
+				<td><input name="title" cols="30" rows="10" placeholder="タイトル"></textarea></td>
+			</tr>
+			<tr>
+				<td>Email</td>
+				<td><input name="email" cols="30" rows="10" placeholder="Emailアドレス"></textarea></td>
+			</tr>
+			<tr>
+				<td valign="top">お問い合わせ内容</td>
+				<td><textarea name="content" cols="30" rows="10" placeholder="お問い合わせ内容（1000文字まで）お書きください"></textarea></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><button type="submit" name="button">送信</button></td>
+			</tr>
+		</table>
 	</form>
 </body>
 
