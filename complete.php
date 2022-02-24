@@ -14,5 +14,6 @@ header('X-FRAME-OPTIONS:DENY');
 </head>
 <body>
 	<p>送信完了しました。</p>
+	<p><a href="index.php">トップに戻る</a></p>
 </body>
 </html>
